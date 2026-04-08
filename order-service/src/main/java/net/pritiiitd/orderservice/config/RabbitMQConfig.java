@@ -15,8 +15,6 @@ public class RabbitMQConfig {
     @Value("${rabbitmq.queue.order.name}")
     private String orderQueue;
 
-    @Value("${rabbitmq.queue.email.name}")
-    private String emailQueue;
 
     @Value("${rabbitmq.exchange.name}")
     private String exchange;
@@ -30,11 +28,8 @@ public class RabbitMQConfig {
         return new Queue(orderQueue);
     }
 
-    // spring bean for queue - order queue
-    @Bean
-    public Queue emailQueue(){
-        return new Queue(emailQueue);
-    }
+
+
 
     // spring bean for exchange
     @Bean
